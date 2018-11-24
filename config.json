@@ -1,11 +1,11 @@
 {
-	"token"          : "NDAyMDcyOTA3Mjg0NDgwMDAw.DtgDPQ.R_Fev8w_VeHh2ZB2iNqbb_WIUm8",
+	"token"          : "insert-token-here",
 	"bot_prefix"     : "!",
 	"messageTimeout" : 3000,
-	"guild_id"       : "515090601461678100",
+	"guild_id"       : "-",
 	
-	"CC_limit" : 7,
-	"CC_image" : "https://media.discordapp.net/attachments/335761781752463362/515798796484214792/wolf.jpg",
+	"CC_limit" : 8,
+	"CC_image" : "",
 	
 	"messages": {
 		"CC": {
@@ -19,25 +19,25 @@
 	},
 	
 	"role_ids": {
-		"gameMaster"  : "515091247145287691",
-		"participant" : "515091522845147138",
-		"dead"        : "515091309095288832",
-		"signed_up"   : "515091932351954964",
-		"developer"   : "515091247145287691"
+		"gameMaster"  : "-",
+		"participant" : "-",
+		"dead"        : "-",
+		"signed_up"   : "-",
+		"developer"   : "-"
 	},
 	
 	"channel_ids": {
-		"log_channel"  : "515091132821143553",
-		"voting_booth" : "515104214796730373",
-		"werewolves"   : "515104237643104256",
-		"cult"         : "515104257649672221"
+		"log_channel"  : "-",
+		"voting_booth" : "-",
+		"werewolves"   : "-",
+		"cult"         : "-"
 	},
 	
 	"developerOptions": {
 		"showErrorsToDevs"  : "true",
 		"showErrorsToUsers" : "false",
 		"logDebugMessages"  : "false",
-		"logOtherMessages"  : "false",
+		"logOtherMessages"  : "true",
 		"logErrorMessages"  : "true",
 		"saveLogFiles"      : "true"
 	}

@@ -1,0 +1,44 @@
+{
+	"token"          : "NDAyMDcyOTA3Mjg0NDgwMDAw.DtgDPQ.R_Fev8w_VeHh2ZB2iNqbb_WIUm8",
+	"bot_prefix"     : "!",
+	"messageTimeout" : 3000,
+	"guild_id"       : "515090601461678100",
+	
+	"CC_limit" : 7,
+	"CC_image" : "https://media.discordapp.net/attachments/335761781752463362/515798796484214792/wolf.jpg",
+	
+	"messages": {
+		"CC": {
+			"createAnonymous": "Look, look! Over @here, a new conspiracy channel has been created! Someone who prefers to remain anonymous has brought you together! Maybe they have something to say...",
+			"createNotAnonymous": "Look, look! Over @here, a new conspiracy channel has been created!",
+			"limitReached": "I'm sorry, but you have reached the limit for how many CCs you can make. Please ask a GM to grant you more CCs."
+		},
+		"general": {
+			"permission_denied": "I'm sorry, but you don't have permission to run that command!"
+		}
+	},
+	
+	"role_ids": {
+		"gameMaster"  : "515091247145287691",
+		"participant" : "515091522845147138",
+		"dead"        : "515091309095288832",
+		"signed_up"   : "515091932351954964",
+		"developer"   : "515091247145287691"
+	},
+	
+	"channel_ids": {
+		"log_channel"  : "515091132821143553",
+		"voting_booth" : "515104214796730373",
+		"werewolves"   : "515104237643104256",
+		"cult"         : "515104257649672221"
+	},
+	
+	"developerOptions": {
+		"showErrorsToDevs"  : "true",
+		"showErrorsToUsers" : "false",
+		"logDebugMessages"  : "false",
+		"logOtherMessages"  : "false",
+		"logErrorMessages"  : "true",
+		"saveLogFiles"      : "true"
+	}
+}

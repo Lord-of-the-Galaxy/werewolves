@@ -1,0 +1,14 @@
+{
+	"gm_only": [
+		"g opensignups",
+		"g startseason",
+		"g setseasoncode",
+		"g endseason",
+		"g kill",
+		"g revive",
+		"c renew",
+		"p startPoll",
+		"p checkPoll",
+		"p endPoll"
+	]
+}

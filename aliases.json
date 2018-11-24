@@ -1,0 +1,21 @@
+{
+
+  "signup" : "g signup",
+  "kill"   : "g kill",
+  "revive" : "g revive",
+
+  "startPoll" : "p startPoll",
+  "endPoll"   : "p endPoll",
+  "checkPoll" : "p checkPoll",
+  
+  "cc"      : "c create",
+  "ccreate" : "c create",
+  "cadd"    : "c add",
+  "add"     : "c add",
+  "cremove" : "c remove",
+  "remove"  : "c remove",
+  "clist"   : "c list",
+  "list"    : "c list",
+  "cinfo"   : "c list",
+  "c info"  : "c list"
+}

@@ -72,6 +72,28 @@ exports.init = function (reset_data) {
 	}
 }
 
+exports.commands.remove = function (msg, client, content) {
+	utils.debugMessage(`@${msg.author.username} ran "g remove" command with emoji ${content[0]}. Current game-state is ${game_state.state_num}`)
+	// command for removing player
+	if(game_state.state_num > 1){
+		msg.reply("game is in progress already");
+		return;
+	}
+
+	exports.resolve_to_id_all(content[0]).then((id) => {
+		removePlayer(id).then(()=>{
+			msg.reply(`successfully removed <@${id}>!`);
+		});
+	}).catch((err) => {
+		if(err){
+			msg.reply(`error occurred`);
+			utils.errorMessage(err.stack);
+		}else{
+			msg.reply(`player has not signed up yet`);
+		}
+	});
+}
+
 exports.commands.signup = function (msg, client, content) {
 	utils.debugMessage(`@${msg.author.username} ran signup command with emoji ${content[0]}. Current game-state is ${game_state.state_num}`)
 	// command for signing yourself up
@@ -439,6 +461,14 @@ exports.getUserEmoji = function (id) {
 		})
 	});
 };
+
+function removeUser(id){
+	return new Promise(function (resolve, reject) {
+		userdb.run("update players set alive = 1 where user_id = ?;", id, () => {
+			resolve(); //why?
+		});
+	});
+}
 
 function addUser(client, id, emoji) {
 	// if no one else is using that emoji, sign them up

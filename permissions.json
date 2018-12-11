@@ -6,6 +6,7 @@
 		"g endseason",
 		"g kill",
 		"g revive",
+		"g remove",
 		"c renew",
 		"p startPoll",
 		"p checkPoll",

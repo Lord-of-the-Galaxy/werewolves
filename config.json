@@ -23,7 +23,8 @@
 		"participant" : "-",
 		"dead"        : "-",
 		"signed_up"   : "-",
-		"developer"   : "-"
+		"developer"   : "-",
+		"spectator"   : "-"
 	},
 	
 	"channel_ids": {

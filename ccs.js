@@ -526,6 +526,13 @@ function buildPermissions(client, creator, others) {
 		allowed: ['VIEW_CHANNEL'],
 		denied: ['SEND_MESSAGES']
 	});
+	
+	//speactators can see it but not speak
+	perms.push({
+		id: config.role_ids.spectator,
+		allowed: ['VIEW_CHANNEL'],
+		denied: ['SEND_MESSAGES']
+	});
 
 	//creator can see it
 	perms.push({

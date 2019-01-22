@@ -1,6 +1,7 @@
 {
 	"gm_only": [
 		"g opensignups",
+		"g gsignup",
 		"g startseason",
 		"g setseasoncode",
 		"g endseason",

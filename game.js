@@ -94,6 +94,44 @@ exports.commands.remove = function (msg, client, content) {
 	});
 }
 
+exports.commands.gsignup = function (msg, client, content) {
+	utils.debugMessage(`@${msg.author.username} ran signup command with emoji ${content[0]}. Current game-state is ${game_state.state_num}`)
+	// command for signing yourself up
+	if (game_state.state_num !== 1) {
+		if (game_state.state_num == 0) {
+			msg.reply("signups aren't open yet!")
+		} else {
+			msg.reply("a game " + (game_state.state_num == 2 ? "is currently in progress. Please wait for it to finish before signing up." : "has just finished. Please wait for the next season to start."))
+		}
+	} else {
+		if (content.length != 2) {
+			msg.reply(`I'm glad you want to sign up someone else but the correct syntax is \`${config.bot_prefix}gsignup <emoji> <mention_of_player>\``)
+		} else {
+			if(!id(content[1])){
+				msg.reply(`I'm glad you want to sign up someone else but the correct syntax is \`${config.bot_prefix}gsignup <emoji> <mention_of_player>\``)
+				return;
+			}
+			msg.react(content[0]).then(mr => {
+				msg.clearReactions();
+				getUserId(utils.toBase64(content[0])).then((id) => {
+					// already in use
+					msg.channel.send(`Sorry but <@${id}> is already using that emoji!`); //really?
+				}).catch(() => {
+					addUser(client, id(content[1]), utils.toBase64(content[0])).then(old => {
+						if (old) {
+							msg.channel.send(`<@${id(content[1])}>'s emoji was changed from ${utils.fromBase64(old)} to ${content[0]}`)
+						} else {
+							msg.channel.send(`<@${id(content[1])}> was signed up with emoji ${content[0]}`);
+						}
+					})
+				})
+			}).catch(() => { // react
+				msg.reply(`${content[0]} is not a valid emoji...`)
+			})
+		}
+	}
+}
+
 exports.commands.signup = function (msg, client, content) {
 	utils.debugMessage(`@${msg.author.username} ran signup command with emoji ${content[0]}. Current game-state is ${game_state.state_num}`)
 	// command for signing yourself up
@@ -315,6 +353,18 @@ exports.commands.setseasoncode = function (msg, client, content) {
 			msg.reply(`season code set to ${content[0]}.`)
 		}
 	}
+}
+
+function id(str){
+	var plainId = /^(\d+)$/;
+	var discordId = /^<@!?(\d+)>$/;
+	var uid = false; //eh
+	if (plainId.test(str)) {
+		uid = plainId.exec(str)[1];
+	} else if (discordId.test(str)) { // str is a valid discord mention
+		uid = discordId.exec(str)[1];
+	}
+	return uid;
 }
 
 exports.resolve_to_id = function (str) {

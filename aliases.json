@@ -1,6 +1,7 @@
 {
 
   "signup" : "g signup",
+  "gsignup": "g gsignup",
   "kill"   : "g kill",
   "revive" : "g revive",
 
